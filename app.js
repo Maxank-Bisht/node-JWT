@@ -8,7 +8,7 @@ const db_password = process.env.DATABASE_PASSWORD;
 const database_name = process.env.DATABASE_NAME;
 
 const app = express();
-console.log(db_username, db_password, database_name);
+
 // middleware
 app.use(express.static('public'));
 app.use(express.json());
