@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
+const cookieParser = require('cookie-parser');
 
 const db_username = process.env.DATABASE_USERNAME;
 const db_password = process.env.DATABASE_PASSWORD;
@@ -12,6 +13,7 @@ const app = express();
 // middleware
 app.use(express.static('public'));
 app.use(express.json());
+app.use(cookieParser());
 
 // view engine
 app.set('view engine', 'ejs');
